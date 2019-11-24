@@ -14,7 +14,7 @@ const BaseHeader = styled.header`
   box-sizing: border-box;
 `
 
-class Header extends Component {
+export class Header extends Component {
   static propTypes = {
     message: PropTypes.string,
     something: PropTypes.bool.isRequired
