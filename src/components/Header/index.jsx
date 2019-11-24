@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 import { initApp } from '../../store/app/actions'
 
@@ -14,6 +15,16 @@ const BaseHeader = styled.header`
 `
 
 class Header extends Component {
+  static propTypes = {
+    message: PropTypes.string,
+    something: PropTypes.bool.isRequired
+  }
+
+  static defaultProps = {
+    message: 'No message',
+    something: true
+  }
+
   componentDidMount () {
     // do something with actions
     this.props.actions.initApp()
