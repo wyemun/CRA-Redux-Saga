@@ -5,7 +5,7 @@ const initialState = {
 }
 
 export default createReducer(initialState, {
-  'APP/START': state => ({
-    hello: 'world'
+  'APP/INIT': state => ({
+    hello: `Initialized at ${(new Date()).toISOString()}`
   })
 })
