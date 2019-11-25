@@ -1,21 +1,15 @@
 import { call, put, fork, takeEvery } from 'redux-saga/effects'
 
-const delayedMessage = async () => new Promise(resolve => {
-  setTimeout(() => {
-    resolve('Delayed messsage here')
-  }, 5 * 1000)
-})
+import { INIT, newEvent } from './actions'
+import { delayedMessage } from './api'
 
-function * handleAppInit () {
+export function * handleAppInit (action) {
   const message = yield call(delayedMessage)
-  yield put({
-    type: 'NEW/EVENT',
-    payload: { message }
-  })
+  yield put(newEvent(message))
 }
 
 function * watchAppInit () {
-  yield takeEvery('APP/INIT', handleAppInit)
+  yield takeEvery(INIT, handleAppInit)
 }
 
 export default [
