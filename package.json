@@ -38,7 +38,7 @@
     "bulma": "^0.8.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "redux-mock-store": "^1.5.3"
   },
   "standard": {
